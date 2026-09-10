@@ -17,6 +17,8 @@ src/courses/*
 src/phonebook/*
 src/unicafe/*
 
+!src/backend/dist
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
