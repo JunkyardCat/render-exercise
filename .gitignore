@@ -11,13 +11,7 @@ node_modules
 !dist
 dist-ssr
 *.local
-src/assets/*
-src/countries/*
-src/courses/*
-src/phonebook/*
-src/unicafe/*
 
-src/backend/dist
 
 # Editor directories and files
 .vscode/*
