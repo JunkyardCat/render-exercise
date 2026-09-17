@@ -1,12 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
-const mongoose = require('mongoose')
-const PhoneBook = require('./models/person.cjs')
-
-//const dns = require('dns')
-//dns.setServers(['8.8.8.8','1.1.1.1'])
-
 const app = express()
 
 app.use(express.static('dist'))
@@ -25,9 +19,6 @@ app.use(morgan((tokens,req,res)=>{
 )
 app.use(cors())
 
-
-
-/*
 let persondata = [
     { 
       "id": "1",
@@ -50,27 +41,13 @@ let persondata = [
       "number": "39-23-6423122"
     }
 ]
-*/
 
 app.get('/',(request,response)=>{
-  console.log("hello world")
+	response.send('<h1>Hello World</h1>')
 })
 
-
 app.get('/api/persons',(request,response)=>{
-  //console.log(password)
-	//response.send(persondata)
-  console.log('inside the /')
-  //const temp =[]
-  PhoneBook.find({}).then(result=>{
-    console.log(result)
-    response.send(result)
-    
-    //mongoose.connection.close()
-  })
-  //response.send(temp)
-
-
+	response.send(persondata)
 })
 
 app.get('/api/persons/:id',(request,response)=>{
@@ -122,10 +99,6 @@ app.get('/info',(request,response)=>{
 
 
 const PORT=3001
-
-mongoose.connection.once('open',()=>{
 app.listen(PORT,()=>{
 	console.log(`running on PORT ${PORT}`)
 })
-})
-
