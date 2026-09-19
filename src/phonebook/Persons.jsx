@@ -8,7 +8,8 @@ const Persons = ({persons, setPersons, setMessage}) =>{
 
 		const temp = persons.filter(n=>n.id!==String(id))
 			setPersons(temp)
-		console.log("remianing persons",temp)
+		console.log("remaining persons",temp)
+      console.log("inside front end delete ",n)
 			setMessage(`deleted ${n.name}`)
 
 		}).catch(error=>{

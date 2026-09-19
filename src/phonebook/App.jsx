@@ -79,7 +79,10 @@ const App = () => {
 				  setMessage(`Added ${newName}`)
 		  	
 
-			  })
+			  }).catch(error=>{
+          console.log("inside the add catch on frontend",error)
+          setMessage(error.response?.data?.error || "something went wrong")
+        })
 
 
 	  }
