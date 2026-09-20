@@ -43,7 +43,10 @@ const App = () => {
 			  setPersons(newPerson)
 				  setMessage(`updated ${newName}`)
 
-			  })
+			  }).catch(error=>{
+          setMessage(error.response?.data?.error || "something went wrong")
+        }
+        )
 
 		  }
 	  }else{
